@@ -11,6 +11,9 @@ namespace SnakeAndLadderProblem
         public static void SnakeAndLadderGame()
         {
             int PlayerPosition = 0;
+
+            Random random = new Random();
+            int dice = random.Next(1,7);
         }
     }
 }
