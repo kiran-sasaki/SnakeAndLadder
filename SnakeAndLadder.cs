@@ -16,6 +16,7 @@ namespace SnakeAndLadderProblem
         public static void SnakeAndLadderGame()
         {
             int PlayerPosition=0;
+            int counter = 0;
             while (PlayerPosition < WINING_POSITION)
             {
                 Random random = new Random();
@@ -43,6 +44,8 @@ namespace SnakeAndLadderProblem
                     Console.WriteLine("Stay in some previous position " + PlayerPosition);
                 }
                 PlayerPosition++;
+                counter++;
+                Console.WriteLine("position  " + PlayerPosition+"Count: "+counter);
             }
         }
     }
