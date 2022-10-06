@@ -13,10 +13,11 @@ namespace SnakeAndLadderProblem
         public const int SNAKE = 2;
         public const int NO_PLAY = 0;
         public const int WINING_POSITION = 100;
-        public static void SnakeAndLadderGame()
+        public int PlayerPosition;
+        public int counter = 0;
+        public int SnakeAndLadderGame(int Player)
         {
-            int PlayerPosition=0;
-            int counter = 0;
+            int PlayerPosition = Player;
             while (PlayerPosition < WINING_POSITION)
             {
                 Random random = new Random();
@@ -43,9 +44,29 @@ namespace SnakeAndLadderProblem
                     PlayerPosition -= diceRoll;
                     Console.WriteLine("Stay in some previous position " + PlayerPosition);
                 }
-                PlayerPosition++;
                 counter++;
-                Console.WriteLine("position  " + PlayerPosition+"Count: "+counter);
+                Console.WriteLine("Count Of Dies Roll " + counter + " PlayerPositon " + PlayerPosition);
+            }
+            return PlayerPosition;
+        }
+        public void initialPlay()
+        {
+            int playerA = 0;
+            int playerB = 0;
+            while (playerA != 100 && playerB != 100)
+            {
+                playerA = SnakeAndLadderGame(playerA);
+                //   playerA += resA;
+                playerB =SnakeAndLadderGame(playerB);
+                //   playerB += resB;
+                if(playerA == WINING_POSITION)
+                {
+                    Console.WriteLine("Player A is Winner");
+                }
+                else
+                {
+                    Console.WriteLine("Player B is Winner");
+                }
             }
         }
     }
